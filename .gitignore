@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+ecomm/
+
+# CSV files
+*.csv
+
+# Airflow
+airflow.db
+airflow.cfg
+unittests.cfg
+logs/
+
+# Snowflake
+snowflake_config.toml
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
