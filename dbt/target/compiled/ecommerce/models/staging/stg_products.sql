@@ -5,4 +5,4 @@ SELECT
     price,
     description,
     created_at
-FROM {{ source('raw', 'products') }}
+FROM ecommerce_db.raw.products

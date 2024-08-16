@@ -9,6 +9,9 @@ ecomm/
 # CSV files
 *.csv
 
+# dbt
+/dbt/profiles.yml
+
 # Airflow
 airflow.db
 airflow.cfg
@@ -24,3 +27,6 @@ snowflake_config.toml
 # IDEs
 .vscode/
 .idea/
+
+#env
+.env

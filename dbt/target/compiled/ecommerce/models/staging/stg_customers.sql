@@ -6,4 +6,4 @@ SELECT
     phone_number,
     address,
     created_at
-FROM {{ source('raw', 'customers') }}
+FROM ecommerce_db.raw.customers

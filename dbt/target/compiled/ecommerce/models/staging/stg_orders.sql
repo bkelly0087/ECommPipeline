@@ -4,4 +4,4 @@ SELECT
     order_date,
     status,
     total_amount
-FROM {{ source('raw', 'orders') }}
+FROM ecommerce_db.raw.orders

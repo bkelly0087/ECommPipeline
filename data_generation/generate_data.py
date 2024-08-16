@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from faker import Faker
 import random
 import uuid
+import os
 
 fake = Faker()
 
@@ -89,7 +90,8 @@ def generate_orders(customers, products, num_orders):
 
 def write_to_csv(data, filename):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filepath = f"data_generation/generated_data/{filename}_{timestamp}.csv"
+    filepath = f"/opt/airflow/data_generation/generated_data/{filename}_{timestamp}.csv"
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
     with open(filepath, 'w', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=data[0].keys())
         writer.writeheader()
