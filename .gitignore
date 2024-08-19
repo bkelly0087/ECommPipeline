@@ -12,6 +12,7 @@ ecomm/
 # dbt
 /dbt/profiles.yml
 **/profiles.yml
+/dbt/target
 
 # Airflow
 airflow.db
