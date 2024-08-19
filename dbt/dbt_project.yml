@@ -18,7 +18,15 @@ clean-targets:
 
 models:
   ecommerce:
+    raw:
+      +schema: raw
+      +materialized: view
     staging:
+      +schema: staging
+      +materialized: view
+    intermidiate:
+      +schema: public
       +materialized: view
     mart:
+      +schema: mart
       +materialized: table
