@@ -19,11 +19,12 @@ services:
       - ./logs:/opt/airflow/logs
       - ./data_pipeline:/opt/airflow/data_pipeline
       - ./data_generation:/opt/airflow/data_generation
+      - ./dbt:/opt/airflow/dbt
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
-      - _PIP_ADDITIONAL_REQUIREMENTS=faker snowflake-connector-python
+      - _PIP_ADDITIONAL_REQUIREMENTS=faker snowflake-connector-python dbt-snowflake 
       - PYTHONPATH=/opt/airflow:/opt/airflow/data_pipeline
       - SNOWFLAKE_ACCOUNT=${SNOWFLAKE_ACCOUNT}
       - SNOWFLAKE_USER=${SNOWFLAKE_USER}
@@ -42,11 +43,12 @@ services:
       - ./logs:/opt/airflow/logs
       - ./data_pipeline:/opt/airflow/data_pipeline
       - ./data_generation:/opt/airflow/data_generation
+      - ./dbt:/opt/airflow/dbt
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
-      - _PIP_ADDITIONAL_REQUIREMENTS=faker snowflake-connector-python
+      - _PIP_ADDITIONAL_REQUIREMENTS=faker snowflake-connector-python dbt-snowflake
       - PYTHONPATH=/opt/airflow:/opt/airflow/data_pipeline
       - SNOWFLAKE_ACCOUNT=${SNOWFLAKE_ACCOUNT}
       - SNOWFLAKE_USER=${SNOWFLAKE_USER}

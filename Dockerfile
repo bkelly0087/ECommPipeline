@@ -11,4 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 USER airflow
 
 # Install Python packages
-RUN pip install --no-cache-dir faker snowflake-connector-python
+RUN pip install --no-cache-dir faker snowflake-connector-python dbt-core dbt-snowflake
+
+# At the end of your Dockerfile
+COPY --chown=airflow:root ./dbt /opt/airflow/dbt
