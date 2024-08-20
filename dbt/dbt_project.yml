@@ -27,6 +27,12 @@ models:
     intermidiate:
       +schema: public
       +materialized: view
+    dim:
+      +schema: public
+      +materialize: table
+    fact:
+      +schema: public
+      +materialized: table
     mart:
       +schema: mart
       +materialized: table

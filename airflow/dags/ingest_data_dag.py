@@ -57,7 +57,7 @@ for table in tables:
 
 run_dbt = BashOperator(
     task_id='run_dbt',
-    bash_command='cd /opt/airflow/dbt && dbt run --profiles-dir .',
+    bash_command='cd /opt/airflow/dbt && dbt run --profiles-dir . --models staging dim fact intermediate mart',
     dag=dag,
 )
 

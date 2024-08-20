@@ -1,5 +1,5 @@
 WITH source AS (
-    SELECT * FROM {{ source('ecommerce', 'customers') }}
+    SELECT * FROM {{ ref('stg_customers') }}
 )
 SELECT
     customer_id,
